@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="eKRÉTA.UserControls.UserControlUsers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:eKRÉTA.UserControls"
+             mc:Ignorable="d">
+    <StackPanel>
+        <DataGrid x:Name="datagridUsers"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+
+                  Height="600"
+                  SelectionChanged="datagridUsers_SelectionChanged"
+                  Width="1100">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Felhasználó név:"
+                                    Binding="{Binding FelhasznaloNev}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Teljes név:"
+                                    Binding="{Binding TeljesNev}"></DataGridTextColumn>
+                <!--<DataGridTextColumn Header="Jelszó:"
+                                    Binding="{Binding Jelszo}"></DataGridTextColumn> -->
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel VerticalAlignment="Center"
+                   Margin="130,10,130,0">
+            <StackPanel Width="300">
+                <TextBlock Text="Felhasználónév: "></TextBlock>
+                <TextBox x:Name="usernameTextBox"></TextBox>
+                <TextBlock Text="Teljes név: "></TextBlock>
+                <TextBox x:Name="fullnameTextBox"></TextBox>
+                <TextBlock Text="Jelszó: "></TextBlock>
+                <PasswordBox x:Name="passwordBox" />
+
+            </StackPanel>
+            <StackPanel>
+                <Button Width="200"
+                        Background="Green"
+                        Foreground="White"
+                        Margin="20,10,0,0"
+                        Click="saveBtn_Click"
+                        x:Name="saveBtn">Mentés</Button>
+                <Button Width="200"
+                        Foreground="White"
+                        Click="deleteBtn_Click"
+                        Background="Red"
+                        Margin="20,10,0,0"
+                        x:Name="deleteBtn">Törlés</Button>
+                <Button Width="200"
+                        Foreground="Black"
+                        Click="modBtn_Click"
+                        Background="Yellow"
+                        Margin="20,10,0,0"
+                        x:Name="modBtn">Módosítás</Button>
+            </StackPanel>
+        </WrapPanel>
+    </StackPanel>
+</UserControl>

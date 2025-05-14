@@ -1,0 +1,58 @@
+﻿<Window x:Class="eKRÉTA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eKRÉTA"
+        mc:Ignorable="d"
+        FontSize="24"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow"
+
+        Height="900"
+        Width="1000">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/DictionaryListItem.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Background="CornflowerBlue">
+        <StackPanel DockPanel.Dock="Top"
+                    Height="30">
+            <TextBlock Foreground="White"
+                       TextAlignment="Center"
+                       FontWeight="ExtraBold">eKRÉTA Adminisztrátori felület</TextBlock>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left"
+                    Background="DeepSkyBlue"
+                    Width="200">
+            <ListView>
+                <ListViewItem Style="{StaticResource ResourceKey=ListItemStyle}"
+                              x:Name="studentMenu"
+                              MouseLeftButtonUp="studentMenu_MouseLeftButtonUp">Diákok</ListViewItem>
+                <ListViewItem  Style="{StaticResource ResourceKey=ListItemStyle}"
+                               MouseLeftButtonUp="teacherMenu_MouseLeftButtonUp"
+                               x:Name="teacherMenu">Tanárok</ListViewItem>
+                <ListViewItem  Style="{StaticResource ResourceKey=ListItemStyle}"
+                               MouseLeftButtonUp="classMenu_MouseLeftButtonUp"
+                               x:Name="classMenu">Osztályok</ListViewItem>
+                <ListViewItem  Style="{StaticResource ResourceKey=ListItemStyle}"
+                               MouseLeftButtonUp="roomMenu_MouseLeftButtonUp"
+                               x:Name="roomMenu">Termek</ListViewItem>
+                <ListViewItem  Style="{StaticResource ResourceKey=ListItemStyle}"
+                               MouseLeftButtonUp="userMenu_MouseLeftButtonUp"
+                               x:Name="userMenu">Felhasználók</ListViewItem>
+                <ListViewItem  Style="{StaticResource ResourceKey=ListItemStyle}"
+                               Background="Red"
+                               Foreground="White"
+                               MouseLeftButtonUp="exitMenu_MouseLeftButtonUp"
+                               x:Name="exitMenu">Bezárás</ListViewItem>
+            </ListView>
+        </StackPanel>
+        <StackPanel x:Name="taskPanel"
+                    DockPanel.Dock="Right"></StackPanel>
+    </DockPanel>
+</Window>
