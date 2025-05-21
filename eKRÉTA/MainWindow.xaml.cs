@@ -31,19 +31,19 @@ namespace eKRÉTA
         private void teacherMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             taskPanel.Children.Clear();
-            taskPanel.Children.Add(new UnderConstruction());
+            taskPanel.Children.Add(new UserControlTanar());
         }
 
         private void classMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             taskPanel.Children.Clear();
-            taskPanel.Children.Add(new UnderConstruction());
+            taskPanel.Children.Add(new UserControlOsztalyok());
         }
 
         private void roomMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             taskPanel.Children.Clear();
-            taskPanel.Children.Add(new UnderConstruction());
+            taskPanel.Children.Add(new UserControlTermek());
         }
 
         private void userMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

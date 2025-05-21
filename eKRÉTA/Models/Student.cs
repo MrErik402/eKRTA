@@ -17,5 +17,18 @@ namespace eKRÉTA.Models
         public string SzulDate { get; set; }
         public string AnyjaNeve { get; set; }
         public string Lakcim { get; set; }
+
+        public Student()
+        {
+        }
+
+        public Student(string vezNev, string utoNev, string szulDate, string anyjaNeve, string lakcim)
+        {
+            VezNev = vezNev;
+            UtoNev = utoNev;
+            SzulDate = szulDate;
+            AnyjaNeve = anyjaNeve;
+            Lakcim = lakcim;
+        }
     }
 }

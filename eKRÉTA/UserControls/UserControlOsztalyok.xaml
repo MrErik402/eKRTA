@@ -7,8 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <DataGrid x:Name="datagridStudents"
+        <DataGrid x:Name="datagridOsztalyok"
                   AutoGenerateColumns="False"
+                  SelectionChanged="datagridOsztalyok_SelectionChanged"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   Height="500"
@@ -20,9 +21,37 @@
                                     Binding="{Binding OsztalyNev}"></DataGridTextColumn>
                 <DataGridTextColumn Header="TeremID:"
                                     Binding="{Binding TeremID}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Születési dátum:"
-                                    Binding="{Binding SzulDate}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <WrapPanel VerticalAlignment="Center"
+           Margin="130,10,130,0">
+            <StackPanel Width="300">
+                <TextBlock Text="Osztály név: "></TextBlock>
+                <TextBox x:Name="osztalynevTBOX"></TextBox>
+                <TextBlock Text="Terem ID: "></TextBlock>
+                <TextBox x:Name="teremIDTBOX"></TextBox>
+
+            </StackPanel>
+            <StackPanel>
+                <Button Width="200"
+                Background="Green"
+                Foreground="White"
+                Margin="20,10,0,0"
+                Click="saveBtn_Click"
+                x:Name="saveBtn">Mentés</Button>
+                <Button Width="200"
+                Foreground="White"
+                Click="deleteBtn_Click"
+                Background="Red"
+                Margin="20,10,0,0"
+                x:Name="deleteBtn">Törlés</Button>
+                <Button Width="200"
+                Foreground="Black"
+                Click="modBtn_Click"
+                Background="Yellow"
+                Margin="20,10,0,0"
+                x:Name="modBtn">Módosítás</Button>
+            </StackPanel>
+        </WrapPanel>
     </StackPanel>
 </UserControl>
