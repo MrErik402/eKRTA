@@ -22,8 +22,10 @@
                                     Binding="{Binding FelhasznaloNev}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Teljes név:"
                                     Binding="{Binding TeljesNev}"></DataGridTextColumn>
-                <!--<DataGridTextColumn Header="Jelszó:"
-                                    Binding="{Binding Jelszo}"></DataGridTextColumn> -->
+                <DataGridTextColumn Header="Szerepkör ID:"
+                                    Binding="{Binding UserRole}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Szerepkör név:"
+                    Binding="{Binding UserRoleName}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <WrapPanel VerticalAlignment="Center"
@@ -35,6 +37,9 @@
                 <TextBox x:Name="fullnameTextBox"></TextBox>
                 <TextBlock Text="Jelszó: "></TextBlock>
                 <PasswordBox x:Name="passwordBox" />
+                <TextBlock Text="Szerepkör:"/>
+                <ComboBox x:Name="szerepkor">
+                </ComboBox>
 
             </StackPanel>
             <StackPanel>

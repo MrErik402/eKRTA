@@ -14,6 +14,8 @@ namespace eKRÉTA.UserControls
         public UserControlUsers()
         {
             InitializeComponent();
+            szerepkor.ItemsSource = Enum.GetNames(typeof(UserRole)); //Név kiírása
+            //szerepkor.ItemsSource = Enum.GetValues(typeof(UserRole)); //Érték kiírása
             users = new List<User>();
             ReadDatabase();
             saveBtn.Visibility = Visibility.Visible;
@@ -27,6 +29,9 @@ namespace eKRÉTA.UserControls
             usernameTextBox.Text = "";
             //NEW!
             passwordBox.Password = "";
+
+            //Alapértelmezett érték a comboboxnak
+            szerepkor.SelectedItem = Enum.GetName(typeof(UserRole), UserRole.Guest);
 
 
             //Generic Repo használata
@@ -54,7 +59,11 @@ namespace eKRÉTA.UserControls
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
             //MODIFIED
-            User user = new User(usernameTextBox.Text, fullnameTextBox.Text, PasswordHelper.HashPassword(passwordBox.Password));
+            string selectedRoleName = (string)szerepkor.SelectedItem; //Kiválasztott szerepkör neve
+            UserRole selectedRole = (UserRole)Enum.Parse(typeof(UserRole), selectedRoleName); //Kiszedjük a szerepkört teljes egészében.
+            int selectedRoleValue = (int)selectedRole; //Kiszedjük a szerepkör IDjét
+
+            User user = new User(usernameTextBox.Text, fullnameTextBox.Text, PasswordHelper.HashPassword(passwordBox.Password), selectedRoleValue);
 
             //User user = new User()
             //{
@@ -105,6 +114,7 @@ namespace eKRÉTA.UserControls
                 selectedUser = (User)datagridUsers.SelectedItem;
                 fullnameTextBox.Text = selectedUser.TeljesNev;
                 usernameTextBox.Text = selectedUser.FelhasznaloNev;
+                szerepkor.Text = selectedUser.UserRoleName;
             }
         }
 
@@ -112,6 +122,12 @@ namespace eKRÉTA.UserControls
         {
             selectedUser.FelhasznaloNev = usernameTextBox.Text;
             selectedUser.TeljesNev = fullnameTextBox.Text;
+
+            string selectedRoleName = (string)szerepkor.SelectedItem; //Kiválasztott szerepkör neve
+            UserRole selectedRole = (UserRole)Enum.Parse(typeof(UserRole), selectedRoleName); //Kiszedjük a szerepkört teljes egészében.
+            int selectedRoleValue = (int)selectedRole; //Kiszedjük a szerepkör IDjét
+
+            selectedUser.UserRole = selectedRoleValue;
 
             // NEW!
             if (passwordBox.Password != "")

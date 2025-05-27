@@ -10,8 +10,8 @@
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
 
-        Height="900"
-        Width="1000">
+        Height="1050"
+        Width="1100">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
