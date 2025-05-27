@@ -10,6 +10,7 @@
         <DataGrid x:Name="datagridTermek"
                   SelectionChanged="datagridTermek_SelectionChanged"
                   AutoGenerateColumns="False"
+                  IsReadOnly="True"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   Height="500"

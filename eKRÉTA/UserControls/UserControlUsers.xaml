@@ -10,7 +10,7 @@
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
-
+                  IsReadOnly="True"
                   Height="600"
                   SelectionChanged="datagridUsers_SelectionChanged"
                   Width="1100">

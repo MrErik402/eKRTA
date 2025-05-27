@@ -9,6 +9,7 @@
         <DataGrid x:Name="datagridStudents"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
+                  IsReadOnly="True"
                   CanUserDeleteRows="False"
                   SelectionChanged="datagridStudents_SelectionChanged"
                   Height="500"

@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <DataGrid x:Name="datagridOsztalyok"
+                  IsReadOnly="True"
                   AutoGenerateColumns="False"
                   SelectionChanged="datagridOsztalyok_SelectionChanged"
                   CanUserAddRows="False"

@@ -11,6 +11,7 @@
                   SelectionChanged="datagridTanar_SelectionChanged"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
+                  IsReadOnly="True"
                   CanUserDeleteRows="False"
                   Height="500"
                   Width="750">
